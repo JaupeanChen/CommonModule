@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.me.module_common">
+    package="com.me.module_common" >
+
+    <application>
+        <activity
+            android:name=".BaseActivity"
+            android:exported="true" />
+    </application>
 
 </manifest>

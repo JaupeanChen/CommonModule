@@ -35,6 +35,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    //引入基础组件，因为业务组件都会以来common组件，所以用api开放
+    //引入基础组件，因为业务组件都会依赖common组件，所以用api开放
     api 'com.github.JaupeanChen.BaseModule:base:1.0.2'
+
+    //以及业务组件需要的三方库，都在common组件统一引入
 }
