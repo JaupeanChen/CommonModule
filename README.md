@@ -1,2 +1,2 @@
 # CommonModule
-Conponent simple demo
+Component simple member --通用组件
