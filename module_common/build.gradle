@@ -66,4 +66,6 @@ dependencies {
     api 'com.github.JaupeanChen.BaseModule:base:1.0.2'
 
     //以及业务组件需要的三方库，都在common组件统一引入
+    api 'com.alibaba:arouter-api:1.5.2'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.5.2'
 }
