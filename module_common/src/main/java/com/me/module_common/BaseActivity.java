@@ -23,11 +23,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         initData();
     }
 
-    abstract int getLayout();
+    public abstract int getLayout();
 
-    abstract boolean isNeedToolBar();
+    public abstract boolean isNeedToolBar();
 
-    abstract void initData();
+    public abstract void initData();
 
     public void setToolbarTitle(String title) {
         TextView textView = findViewById(R.id.tv_title);
