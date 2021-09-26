@@ -9,16 +9,12 @@ import android.widget.TextView;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-    Toolbar toolbar;
+    private TextView tvTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActionBar supportActionBar = getSupportActionBar();
-        if (isNeedToolBar() && supportActionBar == null) {
-            toolbar = findViewById(R.id.toolbar);
-            setSupportActionBar(toolbar);
-        }
+        initToolBar();
         setContentView(getLayout());
         initData();
     }
@@ -29,11 +25,24 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public abstract void initData();
 
+    private void initToolBar() {
+        ActionBar supportActionBar = getSupportActionBar();
+        if (isNeedToolBar() && supportActionBar == null) {
+            Toolbar toolbar = findViewById(R.id.toolbar);
+            if (toolbar == null) {
+                return;
+            }
+            setSupportActionBar(toolbar);
+            tvTitle = toolbar.findViewById(R.id.tv_title);
+            toolbar.setNavigationOnClickListener(v ->
+                    finish()
+            );
+        }
+    }
+
     public void setToolbarTitle(String title) {
-        TextView textView = findViewById(R.id.tv_title);
-        textView.setText(title);
-        toolbar.setNavigationOnClickListener(v ->
-                finish()
-        );
+        if (tvTitle != null) {
+            tvTitle.setText(title);
+        }
     }
 }
