@@ -15,7 +15,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActionBar supportActionBar = getSupportActionBar();
-        if (isNeedToolBar() && supportActionBar != null) {
+        if (isNeedToolBar() && supportActionBar == null) {
             toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
         }

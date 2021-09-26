@@ -1,14 +1,28 @@
 package com.ylz.commonmodule;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.widget.Button;
 
-import android.os.Bundle;
+import com.me.module_common.BaseActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public int getLayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public boolean isNeedToolBar() {
+        return false;
+    }
+
+    @Override
+    public void initData() {
+        Button btn = findViewById(R.id.btn);
+        btn.setOnClickListener(v ->
+                startActivity(new Intent(this, SecActivity.class))
+        );
     }
 }
